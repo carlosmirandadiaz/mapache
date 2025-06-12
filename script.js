@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (!container) return;
 
     const iframe = document.createElement("iframe");
-    iframe.src = `https://player.twitch.tv/?channel=${channelName}&parent=3.19.82.74.nip.io`;
+    iframe.src = `https://player.twitch.tv/?channel=${channelName}&parent=localhost`;
     iframe.width = "720";
     iframe.height = "480";
     iframe.allow = "autoplay; fullscreen";
