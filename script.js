@@ -25,7 +25,6 @@ document.addEventListener("DOMContentLoaded", function () {
     iframe.src = `https://player.twitch.tv/?channel=${channelName}&parent=3.19.82.74.nip.io`;
     iframe.width = "720";
     iframe.height = "480";
-    iframe.allowFullscreen = true;
     iframe.allow = "autoplay; fullscreen";
 
     container.appendChild(iframe);
