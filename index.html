@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Transmisiones, videos y noticias de Radio Mapache">
+  <meta name="robots" content="index, follow">
+  <title>Radio Mapache</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="src/img/Logo_G.png" alt="Logo">
+    </div>
+    <nav aria-label="Navegación principal">
+      <button id="menu-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-links">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#">Inicio</a></li>
+        <li><a href="#">Sobre Nosotros</a></li>
+        <li><a href="#">Servicios</a></li>
+        <li><a href="#">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Twitch embebido -->
+    <section id="twitch-embed-container" class="twitch-embed"></section>
+
+    <!-- YouTube -->
+    <section class="youtube-channels">
+      <h2>Canales de YouTube</h2>
+      <div class="youtube-embeds">
+        <iframe title="Canal 1" src="https://www.youtube.com/embed/a2hmHMI5RUc" allowfullscreen loading="lazy"></iframe>
+        <iframe title="Canal 2" src="https://www.youtube.com/embed/4rboUr16eWM" allowfullscreen loading="lazy"></iframe>
+        <iframe title="Canal 3" src="https://www.youtube.com/embed/8MP6Bgesino" allowfullscreen loading="lazy"></iframe>
+      </div>
+    </section>
+
+    <!-- Noticias -->
+    <section class="news-section">
+      <h2>Noticias desde Pólvora</h2>
+      <div class="news-grid" id="news-container"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Radio Mapache. Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
