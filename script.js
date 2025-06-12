@@ -22,18 +22,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (!container) return;
 
-    // Detectar si el dominio es IP
-    const isIP = /^[\d.]+$/.test(parentDomain);
-
-    if (isIP) {
-      container.innerHTML = `
-      <div style="color: #f00; background: #111; padding: 1rem; text-align: center; border: 2px solid #f00;">
-        Twitch no puede cargarse en una dirección IP pública. Usa un dominio válido o nip.io para mostrar el reproductor.
-      </div>
-    `;
-      return;
-    }
-
     const iframe = document.createElement("iframe");
     iframe.src = `https://player.twitch.tv/?channel=${channelName}&parent=${parentDomain}`;
     iframe.width = "720";
