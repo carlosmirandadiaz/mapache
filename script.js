@@ -17,22 +17,28 @@ document.addEventListener("DOMContentLoaded", function () {
   // =========================
   (function loadTwitchEmbed() {
     const channelName = "radiomapache";
+    const parentDomain = window.location.hostname;
     const container = document.getElementById("twitch-embed-container");
 
     if (!container) return;
 
-    let parent = window.location.hostname;
+    // Detectar si el dominio es IP
+    const isIP = /^[\d.]+$/.test(parentDomain);
 
-    // Si estás usando una IP directa, transforma a dominio válido
-    const ipRegex = /^(?:\d{1,3}\.){3}\d{1,3}$/;
-    if (ipRegex.test(parent)) {
-      parent = `${parent}.nip.io`;
+    if (isIP) {
+      container.innerHTML = `
+      <div style="color: #f00; background: #111; padding: 1rem; text-align: center; border: 2px solid #f00;">
+        Twitch no puede cargarse en una dirección IP pública. Usa un dominio válido o nip.io para mostrar el reproductor.
+      </div>
+    `;
+      return;
     }
 
     const iframe = document.createElement("iframe");
-    iframe.src = `https://player.twitch.tv/?channel=${channelName}&parent=${parent}`;
+    iframe.src = `https://player.twitch.tv/?channel=${channelName}&parent=${parentDomain}`;
     iframe.width = "720";
     iframe.height = "480";
+    iframe.allowFullscreen = true;
     iframe.allow = "autoplay; fullscreen";
 
     container.appendChild(iframe);
