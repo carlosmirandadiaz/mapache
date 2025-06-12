@@ -17,13 +17,12 @@ document.addEventListener("DOMContentLoaded", function () {
   // =========================
   (function loadTwitchEmbed() {
     const channelName = "radiomapache";
-    const parentDomain = window.location.hostname;
     const container = document.getElementById("twitch-embed-container");
 
     if (!container) return;
 
     const iframe = document.createElement("iframe");
-    iframe.src = `https://player.twitch.tv/?channel=${channelName}&parent=${parentDomain}`;
+    iframe.src = `https://player.twitch.tv/?channel=${channelName}&parent=3.19.82.74.nip.io`;
     iframe.width = "720";
     iframe.height = "480";
     iframe.allowFullscreen = true;
