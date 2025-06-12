@@ -21,8 +21,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (!container) return;
 
-    // Detectar parent dinámicamente
-    const parent = window.location.hostname;
+    let parent = window.location.hostname;
+
+    // Si estás usando una IP directa, transforma a dominio válido
+    const ipRegex = /^(?:\d{1,3}\.){3}\d{1,3}$/;
+    if (ipRegex.test(parent)) {
+      parent = `${parent}.nip.io`;
+    }
 
     const iframe = document.createElement("iframe");
     iframe.src = `https://player.twitch.tv/?channel=${channelName}&parent=${parent}`;
