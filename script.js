@@ -22,11 +22,11 @@ document.addEventListener("DOMContentLoaded", function () {
     if (!container) return;
 
     const iframe = document.createElement("iframe");
-    iframe.src = `https://player.twitch.tv/?channel=${channelName}&parent=localhost`;
+    iframe.src = `https://player.twitch.tv/?channel=${channelName}&parent=radiomapache.com`;
     iframe.width = "720";
     iframe.height = "480";
+    iframe.allowFullscreen = true;
     iframe.allow = "autoplay; fullscreen";
-
     container.appendChild(iframe);
   })();
 
