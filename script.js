@@ -45,7 +45,7 @@ function escapeHTML(html) {
 async function fetchNews() {
   try {
     const response = await fetch(
-      "https://polvora.com.mx/wp-json/wp/v2/posts?per_page=10&_embed&categories=77"
+      "https://blog.radiomapache.com/wp-json/wp/v2/posts?per_page=10&_embed&categories=4,5"
     );
     if (!response.ok) throw new Error("Error al obtener las noticias");
 
@@ -61,11 +61,11 @@ async function fetchNews() {
         "https://via.placeholder.com/120";
 
       newsItem.innerHTML = `
-    <img src="${imageUrl}" alt="${post.title.rendered}">
-    <div class="news-item-content">
-      <h3><a href="${post.link}" target="_blank" rel="noopener noreferrer">${post.title.rendered}</a></h3>
-    </div>
-  `;
+        <img src="${imageUrl}" alt="${post.title.rendered}">
+        <div class="news-item-content">
+          <h3><a href="${post.link}" target="_blank" rel="noopener noreferrer">${post.title.rendered}</a></h3>
+        </div>
+      `;
 
       container.appendChild(newsItem);
     });

@@ -1,24 +1,22 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Transmisiones, videos y noticias de Radio Mapache">
-  <meta name="robots" content="index, follow">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Transmisiones, videos y noticias de Radio Mapache" />
+  <meta name="robots" content="index, follow" />
   <title>Radio Mapache</title>
-  <link rel="icon" type="image/png" href="src/img/favicon.png">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/png" href="src/img/favicon.png" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header>
     <div class="logo">
-      <img src="src/img/Logo_G.png" alt="Logo">
+      <img src="src/img/Logo_G.png" alt="Logo" />
     </div>
     <nav aria-label="Navegación principal">
       <button id="menu-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-links">
-        <span></span>
-        <span></span>
-        <span></span>
+        <span></span><span></span><span></span>
       </button>
       <ul class="nav-links" id="nav-links">
         <li><a href="#">Inicio</a></li>
@@ -31,21 +29,71 @@
 
   <main>
     <!-- Twitch embebido -->
-    <section id="twitch-embed-container" class="twitch-embed"></section>
+    <section id="twitch-embed-container" class="twitch-embed">
+      <!-- iframe se inserta dinámicamente por script.js -->
+    </section>
+
+    <!-- TikTok + Instagram -->
+    <section class="social-duo">
+      <!-- TikTok -->
+      <div class="tiktok-section">
+        <h2 class="section-title">
+          <span class="icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#ff0050" viewBox="0 0 24 24">
+              <path d="M9.5 3a6.5 6.5 0 0 0 0 13v5.5h3V12h-3v2.5a3.5 3.5 0 1 1 3-3V3h-3z"/>
+            </svg>
+          </span>
+          TikTok
+        </h2>
+        <div class="tiktok-grid">
+          <iframe src="https://www.tiktok.com/embed/v2/7338639339951344902" allowfullscreen></iframe>
+          <iframe src="https://www.tiktok.com/embed/v2/7337853350765006085" allowfullscreen></iframe>
+          <iframe src="https://www.tiktok.com/embed/v2/7333408928354585862" allowfullscreen></iframe>
+        </div>
+      </div>
+
+      <!-- Instagram -->
+      <div class="instagram-section">
+        <h2 class="section-title">
+          <span class="icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#d62976" viewBox="0 0 24 24">
+              <path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 2 .2 2.5.4.6.2 1 .5 1.4 1 .4.4.7.9 1 1.4.2.5.3 1.3.4 2.5.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.2 2-.4 2.5-.2.6-.5 1-1 1.4-.4.4-.9.7-1.4 1-.5.2-1.3.3-2.5.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-2-.2-2.5-.4-.6-.2-1-.5-1.4-1-.4-.4-.7-.9-1-1.4-.2-.5-.3-1.3-.4-2.5C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.2-2 .4-2.5.2-.6.5-1 1-1.4.4-.4.9-.7 1.4-1 .5-.2 1.3-.3 2.5-.4C8.4 2.2 8.8 2.2 12 2.2zm0 1.8a5.4 5.4 0 1 1 0 10.8 5.4 5.4 0 0 1 0-10.8zm0 1.8a3.6 3.6 0 1 0 0 7.2 3.6 3.6 0 0 0 0-7.2zm5.7-.9a1.3 1.3 0 1 1-2.6 0 1.3 1.3 0 0 1 2.6 0z"/>
+            </svg>
+          </span>
+          Instagram
+        </h2>
+        <div class="instagram-widget">
+          <div class="elfsight-app-1429bdaf-2630-4192-8c41-8d153a4ad1ed" data-elfsight-app-lazy></div>
+        </div>
+      </div>
+    </section>
 
     <!-- YouTube -->
-    <section class="youtube-channels">
-      <h2>Canales de YouTube</h2>
-      <div class="youtube-embeds">
-        <iframe title="Canal 1" src="https://www.youtube.com/embed/a2hmHMI5RUc" allowfullscreen loading="lazy"></iframe>
-        <iframe title="Canal 2" src="https://www.youtube.com/embed/4rboUr16eWM" allowfullscreen loading="lazy"></iframe>
-        <iframe title="Canal 3" src="https://www.youtube.com/embed/8MP6Bgesino" allowfullscreen loading="lazy"></iframe>
+    <section class="youtube-section">
+      <h2 class="section-title">
+        <span class="icon-wrapper">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#FF0000" viewBox="0 0 24 24">
+            <path d="M10 15l5.19-3L10 9v6zm12-3c0-1.66-.13-3.21-.37-4.63-.24-1.42-1.48-2.52-2.91-2.77C16.2 4.8 12 4.8 12 4.8s-4.2 0-6.72.8C3.84 5.85 2.6 6.95 2.36 8.37 2.12 9.79 2 11.34 2 13c0 1.66.13 3.21.37 4.63.24 1.42 1.48 2.52 2.91 2.77 2.52.8 6.72.8 6.72.8s4.2 0 6.72-.8c1.43-.25 2.67-1.35 2.91-2.77.24-1.42.37-2.97.37-4.63z"/>
+          </svg>
+        </span>
+        YouTube
+      </h2>
+      <div class="youtube-gallery">
+        <a class="yt-thumb" href="https://www.youtube.com/watch?v=a2hmHMI5RUc" target="_blank" rel="noopener">
+          <img src="https://img.youtube.com/vi/a2hmHMI5RUc/hqdefault.jpg" alt="Video 1" />
+        </a>
+        <a class="yt-thumb" href="https://www.youtube.com/watch?v=4rboUr16eWM" target="_blank" rel="noopener">
+          <img src="https://img.youtube.com/vi/4rboUr16eWM/hqdefault.jpg" alt="Video 2" />
+        </a>
+        <a class="yt-thumb" href="https://www.youtube.com/watch?v=8MP6Bgesino" target="_blank" rel="noopener">
+          <img src="https://img.youtube.com/vi/8MP6Bgesino/hqdefault.jpg" alt="Video 3" />
+        </a>
       </div>
     </section>
 
     <!-- Noticias -->
     <section class="news-section">
-      <h2>Noticias desde Pólvora</h2>
+      <h2>El botadero</h2>
       <div class="news-grid" id="news-container"></div>
     </section>
   </main>
@@ -55,5 +103,6 @@
   </footer>
 
   <script src="script.js"></script>
+  <script src="https://static.elfsight.com/platform/platform.js" async></script>
 </body>
 </html>
