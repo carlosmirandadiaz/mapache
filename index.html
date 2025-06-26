@@ -29,13 +29,11 @@
 
   <main>
     <!-- Twitch embebido -->
-    <section id="twitch-embed-container" class="twitch-embed">
-      <!-- iframe se inserta dinámicamente por script.js -->
-    </section>
+    <section id="twitch-embed-container" class="twitch-embed"></section>
 
     <!-- TikTok + Instagram -->
     <section class="social-duo">
-      <!-- TikTok -->
+      <!-- TikTok con miniaturas -->
       <div class="tiktok-section">
         <h2 class="section-title">
           <span class="icon-wrapper">
@@ -46,13 +44,19 @@
           TikTok
         </h2>
         <div class="tiktok-grid">
-          <iframe src="https://www.tiktok.com/embed/v2/7338639339951344902" allowfullscreen></iframe>
-          <iframe src="https://www.tiktok.com/embed/v2/7337853350765006085" allowfullscreen></iframe>
-          <iframe src="https://www.tiktok.com/embed/v2/7333408928354585862" allowfullscreen></iframe>
+          <a href="https://www.tiktok.com/@radiomapache/video/7338639339951344902" target="_blank" rel="noopener">
+            <img class="tiktok-thumb" src="https://i3.ytimg.com/vi_webp/a2hmHMI5RUc/maxresdefault.webp" alt="TikTok 1">
+          </a>
+          <a href="https://www.tiktok.com/@radiomapache/video/7337853350765006085" target="_blank" rel="noopener">
+            <img class="tiktok-thumb" src="https://i3.ytimg.com/vi_webp/4rboUr16eWM/maxresdefault.webp" alt="TikTok 2">
+          </a>
+          <a href="https://www.tiktok.com/@radiomapache/video/7333408928354585862" target="_blank" rel="noopener">
+            <img class="tiktok-thumb" src="https://i3.ytimg.com/vi_webp/8MP6Bgesino/maxresdefault.webp" alt="TikTok 3">
+          </a>
         </div>
       </div>
 
-      <!-- Instagram -->
+      <!-- Instagram (sin cambios) -->
       <div class="instagram-section">
         <h2 class="section-title">
           <span class="icon-wrapper">
@@ -93,7 +97,7 @@
 
     <!-- Noticias -->
     <section class="news-section">
-      <h2>El botadero</h2>
+      <h2>Tablero de Basura</h2>
       <div class="news-grid" id="news-container"></div>
     </section>
   </main>

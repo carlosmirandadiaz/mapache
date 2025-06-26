@@ -61,9 +61,18 @@ async function fetchNews() {
         "https://via.placeholder.com/120";
 
       newsItem.innerHTML = `
-        <img src="${imageUrl}" alt="${post.title.rendered}">
+        <img
+          class="news-thumb"
+          src="${imageUrl}"
+          alt="${escapeHTML(post.title.rendered)}"
+          onerror="this.src='src/img/placeholder.jpg';"
+        >
         <div class="news-item-content">
-          <h3><a href="${post.link}" target="_blank" rel="noopener noreferrer">${post.title.rendered}</a></h3>
+          <h3><a href="${
+            post.link
+          }" target="_blank" rel="noopener noreferrer">${
+        post.title.rendered
+      }</a></h3>
         </div>
       `;
 

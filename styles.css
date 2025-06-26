@@ -152,8 +152,10 @@ h1, h2, h3 {
 
 .yt-thumb img {
   width: 100%;
-  display: block;
-  border-radius: 6px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 4px;
+  box-shadow: 0 0 5px #00ff0044;
   transition: transform 0.3s ease;
 }
 
@@ -192,21 +194,21 @@ h1, h2, h3 {
   gap: 1rem;
 }
 
-.tiktok-grid iframe {
+/* NUEVO estilo para miniaturas TikTok */
+.tiktok-thumb {
   width: 100%;
-  aspect-ratio: 9 / 16;
-  border: none;
+  height: 400px;
+  object-fit: cover;
   border-radius: 8px;
   box-shadow: 0 0 10px #00ff00;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
-.tiktok-grid iframe:hover {
+.tiktok-thumb:hover {
   transform: scale(1.03);
-  box-shadow: 0 0 16px #00ff00;
 }
 
-/* Instagram específico (centrado y estilizado) */
+/* Instagram específico */
 .instagram-section {
   display: flex;
   flex-direction: column;
@@ -255,8 +257,7 @@ h1, h2, h3 {
 
 .news-item img.news-thumb {
   width: 100%;
-  height: auto;
-  max-height: 200px;
+  height: 200px;
   object-fit: cover;
   border-radius: 4px;
   box-shadow: 0 0 5px #00ff0044;
@@ -343,5 +344,9 @@ footer {
 
   .instagram-section .elfsight-app-1429bdaf-2630-4192-8c41-8d153a4ad1ed {
     min-height: 500px;
+  }
+
+  .tiktok-thumb {
+    height: 300px;
   }
 }
