@@ -14,7 +14,7 @@
 body {
   font-family: 'VT323', monospace;
   background-color: #0f0f0f;
-  color: #ccc;
+  color: #00C4FF;
   line-height: 1.6;
   background-image: url('src/img/Logo_G.png');
   background-size: 400px;
@@ -85,24 +85,11 @@ h1, h2, h3 {
 }
 
 .section-title {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
   font-size: 1.5rem;
-  justify-content: center;
   margin-top: 1rem;
+  text-align: center;
   transition: color 0.3s ease;
-}
-
-.section-title:hover .icon-wrapper svg {
-  box-shadow: 0 0 10px #00ff00;
-  transform: rotate(-5deg);
-}
-
-.icon-wrapper svg {
-  display: inline-block;
-  vertical-align: middle;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: #00C4FF;
 }
 
 /* Twitch */
@@ -244,7 +231,7 @@ h1, h2, h3 {
   border: 1px solid #00ff00aa;
   padding: 1rem;
   box-shadow: 0 0 8px #00ff00aa;
-  color: #eee;
+  color: #00C4FF;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -280,7 +267,7 @@ footer {
   text-align: center;
   padding: 1rem;
   background: #101010;
-  color: #777;
+  color: #00C4FF;
   font-size: 0.9rem;
 }
 
