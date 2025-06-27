@@ -95,8 +95,20 @@
 
   <script src="script.js"></script>
   <script src="https://static.elfsight.com/platform/platform.js" async></script>
-  <script>
-  fetch("track_view.php", { method: "POST" });
+<script>
+  let viewerId = localStorage.getItem('viewer_id');
+  if (!viewerId) {
+    viewerId = crypto.randomUUID();
+    localStorage.setItem('viewer_id', viewerId);
+  }
+
+  fetch("track_view.php", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({ id: viewerId })
+  });
 </script>
 </body>
 </html>

@@ -1,19 +1,28 @@
 <?php
-$ip = $_SERVER['REMOTE_ADDR'];
+$data = json_decode(file_get_contents('php://input'), true);
+$viewerId = $data['id'] ?? null;
+
+if (!$viewerId) {
+    http_response_code(400);
+    exit('No viewer ID provided.');
+}
+
 $file = 'viewers.json';
 $now = time();
-$timeout = 120; // 2 minutos
+$timeout = 120; // segundos para considerar "activo"
 
-$data = file_exists($file) ? json_decode(file_get_contents($file), true) : [];
+$viewers = file_exists($file) ? json_decode(file_get_contents($file), true) : [];
 
-$data[$ip] = $now;
+// Registrar o actualizar visitante
+$viewers[$viewerId] = $now;
 
-foreach ($data as $k => $v) {
-    if ($v < $now - $timeout) {
-        unset($data[$k]);
+// Limpiar visitantes antiguos
+foreach ($viewers as $id => $timestamp) {
+    if ($timestamp < $now - $timeout) {
+        unset($viewers[$id]);
     }
 }
 
-file_put_contents($file, json_encode($data));
-
+// Guardar
+file_put_contents($file, json_encode($viewers));
 http_response_code(204);
