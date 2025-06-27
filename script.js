@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Embed dinámico de Twitch
   // =========================
   (function loadTwitchEmbed() {
-    const channelName = "radiomapache";
+    const channelName = "rocketramy";
     const container = document.getElementById("twitch-embed-container");
 
     if (!container) return;
